@@ -20,7 +20,9 @@ for data in datas:
         chance = 0.4
     else:
         chance = 0.2
-    chuva.append(np.random.binomial(1, chance))
+    alpha = chance * 10
+    beta = (1 - chance) * 10
+    chuva.append(np.random.beta(alpha, beta))
 chuva = np.array(chuva)
 
 # Vendas
